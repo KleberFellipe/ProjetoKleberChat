@@ -1,0 +1,217 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+#menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 300px;
+    background-color: #ffccd1  ;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    z-index: 1;
+    border: 2px solid #e51b61;
+}
+
+#messages::-webkit-scrollbar { /*largura do scroll*/
+  width: 10px;
+}
+
+#messages::-webkit-scrollbar-track { /*cor do track e tamanho da borda*/
+  background: #ffe6ea;
+  border-radius: 10px;
+}
+
+#messages::-webkit-scrollbar-thumb { /*cor da parte q arrasta, tamanho da borda e cor dela*/
+  background-color: #e51b61;
+  border-radius: 10px;
+  border: 2px solid #ffe6ea;
+}
+
+#messages::-webkit-scrollbar-thumb:hover { /*muda cor do scroll qnd passa o mouse*/
+  background-color: #b30047;
+}
+
+#menuText{
+    text-align: center;      /*para suportar firefox*/
+    margin-bottom: 20px;
+}
+
+#background {
+    margin-left: 300px;
+    background: linear-gradient(to top right,#e51b61, #f784a2,#ffccd1);
+    width: calc(100% - 300px);
+    height: 101vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#welcomeMessage {
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+    color: #e51b61 !important;
+    background: none;
+    text-shadow: #f784a2 0 2px 2px, #e51b61 0 2px 2px, #e51b61 0 1px 1px;
+}
+
+#chat-container {
+    background-color: #ffccd1;
+    border-radius: 10px;
+    border: 3px solid #e51b61;
+    width: 90%;
+    max-width: 1000px;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: #f784a2 0 5px 5px, #f784a2 0 10px 10px, #f784a2 0 15px 15px;
+}
+
+#messages {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    scrollbar-width: thin;
+  scrollbar-color: #e51b61 #ffe6ea;
+  top: 1px;
+  bottom: 61px;
+}
+
+.message {
+    max-width: 70%;
+    padding: 10px;
+    margin: 6px 0;
+    border-radius: 10px;
+    font-size: 15px;
+    word-wrap: break-word;
+    box-shadow: #f784a2 0 2px 5px;
+    scroll-behavior: smooth;
+}
+
+.bot {
+    align-self: flex-start;
+    background-color: #ffffff;
+    color: #000;
+}
+
+.user {
+    align-self: flex-end;
+    background-color: #52c7c3;
+    color: #000;
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+}
+
+#user-input {
+    width: 100%;
+    height: 40px;
+    padding: 10px 85px 10px 15px;
+    border: 1px solid #e51b61 !important;
+    background-color: #ffffff;
+    border-radius: 15px;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+    color: #e51b61 ;
+    box-shadow: #f784a2 0 2px 5px;
+}
+
+#send-button {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    padding: 8px 16px;
+    background-color: #52c7c3;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+#menuList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#BotaoChats {
+    cursor: pointer;
+    box-shadow: #e51b61 0 2px 4px, #e51b61 0 2px 5px, #e51b61 0 2px 2px, #e51b61 0 2px 5px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+    padding:10px;
+    font-size: 15px;
+}
+#BotaoChats:hover {
+    background-color: #d1d1d1;
+}
+
+.Historico {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  background: #f0f0f0;
+  padding: 0 15px;
+}
+
+
+#Configuracoes {
+    cursor: pointer;
+    box-shadow: #e51b61 0 2px 4px, #e51b61 0 2px 5px, #e51b61 0 2px 2px, #e51b61 0 2px 5px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+}
+#Configuracoes:hover {
+    background-color: #d1d1d1;
+}
+#Ajuda {
+    cursor: pointer;
+    box-shadow: #e51b61 0 2px 4px, #e51b61 0 2px 5px, #e51b61 0 2px 2px, #e51b61 0 2px 5px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+}
+#Ajuda:hover {
+    background-color: #d1d1d1;
+}
+#send-button:hover:not(:disabled) {
+    background-color: #3b9696;
+}
+
+#send-button:disabled {
+    background-color: #9ad4d4;
+    cursor: not-allowed;
+}
+
+.typing {
+    font-style: italic;
+    color: #999;
+}
+
+#menuText {
+    border-bottom: 2px solid #e51b61;
+    padding-bottom: 10px;
+}
