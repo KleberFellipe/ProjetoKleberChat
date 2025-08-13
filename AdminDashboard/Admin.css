@@ -1,0 +1,303 @@
+body, html {
+    background: linear-gradient(to top right,#e51b61,#ffccd1);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+@font-face {
+    font-family: 'FontePorvoce';
+    src: url('../fontes/LilitaOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FonteChat';
+    src: url('../fontes/RhodiumLibre-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    transform: scale(0);
+    animation: ripple-animation 0.6s linear;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+}
+
+#menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 300px;
+    background-color: #ffccd1;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    z-index: 1;
+    border: 2px solid #e51b61;
+    transition: transform 0.6s ease;
+}
+
+#menuText {
+    font-family: 'FontePorvoce', sans-serif;
+    border-bottom: 2px solid #e51b61;
+    padding-bottom: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#menuList {
+    overflow: visible;
+    list-style: none;
+    padding: 0;
+}
+
+#menuList li {
+    margin-bottom: 20px;
+}
+
+#menuList button {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: #e51b61 0 2px 4px, #e51b61 0 2px 5px, #e51b61 0 2px 2px, #e51b61 0 2px 5px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+    padding:10px;
+    font-size:20px;
+    font-family: 'FontePorvoce', sans-serif;
+    width: 100%;
+    transition: 0.3s ease;
+}
+#menuList button:hover {
+    background-color: #e0e0e0;
+    position: relative;
+    z-index: 1;
+    transform: scale(1.05);
+}
+
+#menu-toggle-button {
+    position: fixed;
+    top: 20px;
+    left: 343px; 
+    background-color: #e51b61;
+    color: white;
+    padding: 10px 12px;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 10;
+    transition: left 0.6s ease;
+    box-shadow: #b30047 0 2px 2px, #b30047 0 2px 2px, #b30047 0 2px 2px;
+}
+
+#menu-toggle-button::before {
+    content: ">>";
+    rotate: 180deg;
+    display: inline-block;
+    transition: transform 0.4s cubic-bezier(.68,-0.55,.27,1.55);
+    font-size: 20px;
+}
+
+#toggle-menu:checked + #menu-toggle-button::before {
+    transform: rotate(0deg) scaleX(-1);
+}
+
+#toggle-menu:checked + #menu-toggle-button {    
+    left: 0; 
+    border-radius: 0 5px 5px 0;
+}
+
+#toggle-menu:checked ~ #menu {
+    transform: translateX(-100%);
+}
+
+#admin-container {
+    margin-left: 350px;
+    padding: 40px 20px;
+    background: #ffccd1;
+    border-radius: 10px;
+    border: 3px solid #e51b61;
+    box-shadow: #f784a2 0 5px 5px, #f784a2 0 10px 10px, #f784a2 0 15px 15px;
+    min-height: 80vh;
+    transition: transform 0.6s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#toggle-menu:checked ~ #admin-container {
+    transform: translateX(-100px);
+}
+
+#admin-title {
+    font-family: 'FontePorvoce', sans-serif;
+    font-size: 3em;
+    color: #e51b61;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0px;
+    text-shadow: #f784a2 0 1px 1px, #e51b61 0 1px 1px, #e51b61 0 1px 1px;
+    letter-spacing: 1px;
+}
+
+#admin-content {
+    font-family: 'FontePorvoce', sans-serif;
+    font-size: 2em;
+    color: #e51b61;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 35px;
+    text-shadow: #f784a2 0 1px 1px, #e51b61 0 1px 1px, #e51b61 0 1px 1px;
+    letter-spacing: 1px;
+}
+
+#alertas-title-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: -10px;
+}
+
+#alertas-title {
+    font-family: 'FontePorvoce', sans-serif;
+    font-size: 2em;
+    color: #e51b61;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    background: #fff6fa;
+    border-radius: 10px 10px 0 0;
+    padding: 10px 30px 10px 30px;
+    box-shadow: #f784a2 0 1px 2px;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+#Alertas-container {
+    width: 90%;
+    min-height: 200px;
+    max-height: 400px;
+    background: #fff6fa;
+    border-radius: 0 0 10px 10px;
+    border: 2px solid #e51b61;
+    box-shadow: #f784a2 0 2px 5px;
+    margin: 0 auto 30px auto;
+    padding: 20px 30px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.alerta-mensagem {
+    background: #ffe6ea;
+    border-left: 6px solid #e51b61;
+    border-radius: 8px;
+    padding: 12px 18px;
+    margin-bottom: 18px;
+    box-shadow: #f784a2 0 1px 2px;
+    width: 95%;
+    font-family: 'FonteChat', sans-serif;
+    font-size: 1.1em;
+    color: #b30047;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.alerta-icone {
+    font-size: 1.5em;
+    margin-right: 8px;
+}
+
+.alerta-hora {
+    font-size: 0.95em;
+    color: #e51b61;
+    margin-right: 8px;
+}
+
+.alerta-usuario {
+    font-weight: bold;
+    color: #e51b61;
+}
+
+.alerta-texto {
+    margin-top: 4px;
+    color: #b30047;
+    font-size: 1em;
+}
+
+#alerta-mensagem {
+    display: none;
+}
+
+#usuarios-voluntarios-row {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+#usuarios-container, #voluntarios-container {
+    background: #fff6fa;
+    border-radius: 10px;
+    border: 2px solid #e51b61;
+    box-shadow: #f784a2 0 2px 5px;
+    padding: 20px 30px;
+    min-width: 220px;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.usuarios-title, .voluntarios-title {
+    font-family: 'FontePorvoce', sans-serif;
+    font-size: 1.3em;
+    color: #e51b61;
+    margin-bottom: 12px;
+    margin-top: 0;
+    text-align: center;
+}
+
+.usuario-nome, .voluntario-nome {
+    font-family: 'FonteChat', sans-serif;
+    font-size: 1.1em;
+    color: #b30047;
+    background: #ffe6ea;
+    border-radius: 6px;
+    padding: 8px 16px;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    box-shadow: #f784a2 0 1px 2px;
+}
+
+#grafico-container {
+    width: 400px;
+    margin: 30px auto 0 auto;
+    background: #fff6fa;
+    border-radius: 10px;
+    border: 2px solid #e51b61;
+    box-shadow: #f784a2 0 2px 5px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
