@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin Dashboard - Você Bem</title>
+    <link rel="stylesheet" href="Admin.css" />
+    <script src="Admin.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <input type="checkbox" id="toggle-menu" hidden />
+    <label for="toggle-menu" id="menu-toggle-button" title="Abrir/fechar menu lateral"></label>
+
+    <div id="conteudo" class="side-menu"></div>
+    <div id="menu">
+        <h2 id="menuText">Menu Admin</h2>
+        <ul class="ripple-button" id="menuList">
+            <li><button type="button" id="BotaoDashboard">Dashboard</button></li>
+            <li><button type="button" id="BotaoVoltar">Voltar</button></li>
+            <li><button type="button" id="BotaoSair">Sair</button></li>
+        </ul>
+    </div>
+
+    <div id="admin-container">
+        <h1 id="admin-title">Dashboard Administrativo</h1>
+        <div id="admin-content">
+            <p>Bem-vindo <p id="administrador" >"Administrador!"</p></p>
+
+    </div>
+                <div id="alertas-title-container">
+    <h2 id="alertas-title">Alertas recentes: <span id="avisoAlerta">(1)</span></h2>
+</div>
+<div id="Alertas-container">
+    <div class="alerta-mensagem">
+        <span class="alerta-icone">🚨</span>
+        <span class="alerta-hora">[12:43]</span>
+        <span class="alerta-usuario">Joana F.</span>
+        <div class="alerta-texto">Mensagem: "Não me sinto bem mentalmente..."</div>
+    </div>
+</div>
+<div id="usuarios-container">
+        <h2 class="usuarios-title">Usuários</h2>
+        <div class="usuario-nome">Joana F.</div>
+        <div class="usuario-nome">Erique S.</div>
+    </div>
+<div id="grafico-container">
+    <canvas id="dashboardPie" width="400" height="250"></canvas>
+</div>
+    </div>
+</body>
+</html>

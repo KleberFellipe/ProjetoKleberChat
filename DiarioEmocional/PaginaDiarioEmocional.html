@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Diario.js" defer></script>
+    <link rel="stylesheet" href="Diariostyle.css">
+    <title>Você Bem</title>
+</head>
+<body>
+    <input type="checkbox" id="toggle-menu" hidden />
+
+    <label for="toggle-menu" id="menu-toggle-button" title="Abrir/fechar menu lateral"></label>
+
+    <div id="conteudo" class="side-menu"></div>
+    <div id="menu">
+        <h2 id="menuText">Menu</h2>
+        <ul class="ripple-button" id="menuList">
+    <li><button type="button" id="BotaoPaginaInicial">Página inicial</button></li>
+    <li><button type="button" id="BotaoCursos">Cursos</button></li>
+    <li><button type="button" onclick="setTimeout(function(){ window.location.href='../PaginaChat.html'; }, 1000)" id="BotaoPorvoce">Por Você</button></li>
+    <li><button type="button" id="BotaoContatos">Contatos</button></li>
+    <li><button type="button" id="BotaoChats">Histórico</button></li>
+    <li><button type="button" onclick="location.reload()" id="BotaoDiarioEmocional">Diário Emocional</button></li>
+</ul>
+    </div>
+
+    <div id="diario-insights">
+        <span id="diario-letras">Letras: <span id="diario-count">0</span></span>
+        <span id="diario-ultimaVez">Última vez escrito: <span id="diario-ultimavez-span">Nunca</span></span>
+    </div>
+    <div id="diario-container">
+        <h1 id="diario-title">Seu Diário Emocional</h1>
+        <textarea id="diario-textarea" type="text" class="ativa" placeholder="Hoje o meu dia foi..."></textarea>
+    </div>
+</body>
+</html>
