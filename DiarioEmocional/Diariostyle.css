@@ -56,14 +56,14 @@ body, html {
     text-align: left;
     margin-top: 20px;
     scroll-behavior: smooth;
-    line-height: 32px; /* Increase line-height for better spacing */
+    line-height: 32px;
     background-image:
         repeating-linear-gradient(
             to bottom,
             #fff 0px,
-            #fff 25px,      /* white space for text */
-            #52c7c3 25px,   /* line color */
-            #fff 28px       /* space after line */
+            #fff 25px,
+            #52c7c3 25px,
+            #fff 28px
         );
 }
 
@@ -287,7 +287,7 @@ body, html {
     width: 75%;
     left: 70px;
     max-width: 10000px;
-    height: 85vh;           /* Slightly increased height */
+    height: 85vh;
     display: flex;
     position: relative;
     flex-direction: column;
